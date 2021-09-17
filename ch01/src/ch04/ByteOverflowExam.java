@@ -6,7 +6,7 @@ public class ByteOverflowExam {
 		// TODO Auto-generated method stub
 
 		for (int i = -128; i < 500; i++) {
-			System.out.println((byte) i);
+			System.out.println(i + ":" + (byte) i);
 		}
 	}
 
