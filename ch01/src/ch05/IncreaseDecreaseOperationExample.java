@@ -39,6 +39,12 @@ public class IncreaseDecreaseOperationExample {
 		System.out.println(y);
 		System.out.println("------------------");
 
+		int family = 50;
+		family++; // 51
+		++family; // 52
+		System.out.println("우리집의 식구는 모두" + ((family++) + 1) + "명이다"); // 53
+		System.out.println(family);
+
 	}
 
 }
