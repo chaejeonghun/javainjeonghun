@@ -29,6 +29,9 @@ public class BitWiseOperExam03 {
 		System.out.printf("%04x\n", (short) (~a)); // ~0101 0101 1111 1111 => 1010 1010 0000 0000
 													// 10 10 0 0 = a a 0 0
 
+		System.out.println("hello");
+		System.out.printf("hello\n");
+		System.out.println("hello");
 	}
 
 }
