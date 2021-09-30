@@ -22,11 +22,7 @@ public class work0929 {
 			id = scanner.next();
 			System.out.println("패스워드 >");
 			pw = scanner.next();
-			if (id != "hong" || pw != "1234") {
 
-				System.out.println(cnt++ + "회 실패하였습니다.");
-
-			}
 			if (cnt == 5) {
 				System.out.println(cnt + " 회 실패 하였습니다. 프로그램을 종료합니다");
 				break;
@@ -36,6 +32,9 @@ public class work0929 {
 			if ("hong".equals(id) && "1234".equals(pw)) {
 				System.out.println("로그인 성공");
 				break;
+			}
+			if (id != "hong" || pw != "1234") {
+				System.out.println(++cnt + "회 실패하였습니다.");
 			}
 
 		}
