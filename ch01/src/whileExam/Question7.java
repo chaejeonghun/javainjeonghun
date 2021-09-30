@@ -21,7 +21,7 @@ public class Question7 {
 			keycode = System.in.read();
 			if (keycode == 49) {
 				System.out.println("선택 > 1");
-				System.out.println("예금액 > 10000");
+				System.out.print("예금액 > 10000");
 			} else if (keycode == 50) {
 				System.out.println("선택 > 2");
 				System.out.println("출금액 > 2000");
