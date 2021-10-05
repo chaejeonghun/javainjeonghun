@@ -6,37 +6,44 @@ public class work0929 {
 
 	public static void main(String[] args) {
 
-		// TODO Auto-generated method stub
-		// 1.id ="hong", pw = "1234
-		// id 와 pw를 scanner로 입력 받아서 id와 pw가 둘다 같으면 " login 성공",
-		// 아니면 "1회 실패하였습니다." 출력
-		// 5회 실패하면, "5회 실패하였습니다. 프로그램을 종료합니다 " 출력 후 종료
-		int cnt = 0;
-
 		Scanner scanner = new Scanner(System.in);
+		boolean run = true;
+		final double maleSTD = 1.10, femaleSTD = 1.07;
+		final int COMSTD = 128, COMSTD2 = 100;
 
-		while (true) {
-			String id, pw;
-			System.out.println("아이디와 패스워드를 입력하세요.");
-			System.out.println("아이디 >");
-			id = scanner.next();
-			System.out.println("패스워드 >");
-			pw = scanner.next();
+		while (run) {
+			System.out.println("========================================");
+			System.out.println(" 정확한 계산을 위하여 아래 정보를 입력 바랍니다");
+			System.out.println("========================================");
+			System.out.print("성별(남자(M)/여자(F) 입력) >");
+			String gender = scanner.next();
+			System.out.print("나이를 입력(정수:10~39) > ");
+			int age = scanner.nextInt();
+			System.out.print("키를 입력(단위:cm) > ");
+			double height = scanner.nextDouble();
+			System.out.print("몸무게를 입력(단위:kg) > ");
+			double weight = scanner.nextDouble();
 
-			if (cnt == 5) {
-				System.out.println(cnt + " 회 실패 하였습니다. 프로그램을 종료합니다");
+			// 1. 제지방량 구하기
+			// 남성 = (1.10 * 체중) - (128 * (체중*체중)/(키*키))
+			// 여성 = (1.07 * 체중) - (128 * (체중*체중)/(키*키))
+			double leanBodyMass = 0.0;
+			switch (gender) {
+			case "M":
+				leanBodyMass = (maleSTD * weight) - (COMSTD * ((weight * weight) / (double) (height * height)));
+				break;
+			case "F":
+				leanBodyMass = (femaleSTD * weight) - (COMSTD * ((weight * weight) / (double) (height * height)));
 				break;
 			}
 
-			System.out.println();
-			if ("hong".equals(id) && "1234".equals(pw)) {
-				System.out.println("로그인 성공");
-				break;
-			}
-			if (id != "hong" || pw != "1234") {
-				System.out.println(++cnt + "회 실패하였습니다.");
-			}
+			System.out.println("결과:>");
+			System.out.printf("제지방량:%.2f\n", leanBodyMass);
 
-		}
+			System.out.println("계속할까요?(yes/No)");
+			String yesNo = scanner.next();
+			if (yesNo.equals("No"))
+				run = !run;
+		} // while문 끝.
 	}
 }

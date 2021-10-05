@@ -18,36 +18,22 @@ public class work1004 {
 		// 체중 75 kg 키 175cm 인 남성의 표준 체지방량은 얼마일까요 ?
 		Scanner scanner = new Scanner(System.in);
 
-		double a = 1.10, b = 128;
+		final double a = 1.10;
+		final int b = 128;
 		boolean run = true;
 		int sum = 0;
+		String age, height, weight, gender;
+		System.out.println("성별?");
+		gender = scanner.next();
+		System.out.println("나이?");
+		age = scanner.next();
+		System.out.println("키?");
+		height = scanner.next();
+		System.out.println("몸무게?");
+		weight = scanner.next();
 
-		for (int i = 0; i < strArray.length; i++) {
-			System.out.println("성별 : ");
-			strArray[i] = scanner.nextLine();
-			System.out.println("나이 : ");
-			strArray[i] = scanner.nextLine();
-			System.out.println("키 : ");
-			strArray[i] = scanner.nextLine();
-			System.out.println("몸무게 : ");
-			strArray[i] = scanner.nextLine();
-			for (int j = 0; j < strArray.length; j++) {
-				System.out.println("성별 : " + strArray[i]);
-				System.out.println("나이 : " + strArray[i] + 1);
-				System.out.println("키 : " + strArray[i] + 2);
-				System.out.println("몸무게 : " + strArray[i] + 3);
-			}
-			while (true) {
-
-				System.out.println("체지방률 게산을 시작 할까요? yes or no");
-				String text = scanner.nextLine();
-				System.out.println(text);
-				if (text.equals("no"))
-					break;
-
-			}
+		while (true) {
 
 		}
-
 	}
 }
