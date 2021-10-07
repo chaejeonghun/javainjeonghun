@@ -76,38 +76,54 @@ public class BankApplication {
 
 	// 예금
 	private static void deposit() {
+		System.out.println("---------");
 		System.out.println("예금");
-
+		System.out.println("---------");
+		System.out.print("계좌번호");
 		String ano = scanner.next();
+		System.out.print("예금액");
 		int amount = scanner.nextInt();
 		Account acc = findAccount(ano);
-		if (acc != null)
+
+		if (acc != null) {
 			acc.setBalance(acc.getBalance() + amount);
+			System.out.println("결과 : 예금에 성공하였습니다.");
+		} else {
+			System.out.println("결과 : 계좌번호를 확인해주세요.");
+		}
 	}
 
 	// 출금
 	private static void withdraw() {
+		System.out.println("---------");
 		System.out.println("출금");
+		System.out.println("---------");
+		System.out.print("계좌번호");
 		String ano = scanner.next();
+		System.out.print("출금액");
 		int amount = scanner.nextInt();
 		Account acc = findAccount(ano);
 		if (acc != null) {
 			if (acc.getBalance() - amount >= 0) {
 				acc.setBalance(acc.getBalance() - amount);
+				System.out.println("결과 : 출금에 성공하였습니다.");
+			} else {
+				System.out.println("결과 : 잔고가 부족합니다.");
 			}
+
 		}
 	}
 
 	// Account 배열에서 ano 와 동일한 Account객체 찾기
 	// 참조타입 배열의 값 비교
 	private static Account findAccount(String ano) {
-		Account account = null;
+		Account account = null;// 로컬 변수
 		// 무언가 추가되어야 오류가 발생안함
 		for (int i = 0; i < accountArray.length; i++) {
 			account = accountArray[i];
 			if (account != null) {
 				if (account.getAno().equals(ano))
-					return account;
+					break;// ano에 해당하는 객체 리턴
 			}
 		}
 		return account;
