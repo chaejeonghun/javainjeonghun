@@ -28,7 +28,7 @@ class SeperateVolume implements Lendable {
 			return;
 		this.name = name;
 		this.date = date;
-		state = BORROWED;
+		state = BORROWED; // 대출상태 변경
 		System.out.println(title + "을 " + name + " 가 대출했습니다.");
 		System.out.println("대출일자 : " + date);
 	}
@@ -37,7 +37,7 @@ class SeperateVolume implements Lendable {
 	public void checkIn() {
 		name = "";
 		date = "";
-		state = NORMAL;
+		state = NORMAL; // 반납상태 변경
 		System.out.println(title + " 을 반납했습니다");
 
 	}
