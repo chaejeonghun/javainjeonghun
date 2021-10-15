@@ -1,0 +1,43 @@
+package time;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
+// java 1.8에 추가된 time 패키지
+public class DataTimeCreateExample {
+	public static void main(String[] args) {
+		// 날짜얻기
+		LocalDate currDate = LocalDate.now();
+		System.out.println("현재 날짜 : " + currDate);
+
+		LocalDate targetDate = LocalDate.of(2024, 5, 10);
+		System.out.println("목표 날짜 : " + targetDate);
+
+		// 시간
+		LocalTime currTime = LocalTime.now();
+		System.out.println("현재 시간 : " + currTime);
+
+		LocalTime targetTime = LocalTime.of(6, 30, 0, 0);
+		System.out.println("목표 시간 : " + targetTime);
+
+		// 날짜 시간
+		LocalDateTime currDateTime = LocalDateTime.now();
+		System.out.println("현재 날짜와 시간 : " + currDateTime);
+
+		LocalDateTime targetDateTime = LocalDateTime.of(2024, 5, 10, 6, 30, 0, 0);
+		System.out.println("목표 날짜와 시간 : " + targetDateTime);
+
+		// 협정 시와 타임존
+		ZonedDateTime utcDateTime = ZonedDateTime.now(ZoneId.of("UTC"));
+		System.out.println("협정 셰계시 : " + utcDateTime);
+
+		// 특정 시점의 타임스탬프 얻기
+		Instant instant1 = Instant.now();
+		System.out.println(instant1);
+	}
+
+}
